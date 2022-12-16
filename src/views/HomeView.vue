@@ -1,19 +1,27 @@
 <template>
   <div class="home">
-    <SideBarElement
-      text="Overview"
-      imageName="home-line.svg"
-      :amountOfNotifications="10"
-    />
+    <SideBar />
+    <main class="main-container"></main>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import SideBarElement from "../components/atoms/SideBarElement.vue";
+import SideBar from "@/components/organizms/SideBar.vue";
 
 export default {
   name: "HomeView",
-  components: { SideBarElement },
+  components: { SideBar },
 };
 </script>
+
+<style lang="scss">
+.home {
+  @apply grid grid-flow-col;
+  grid-auto-columns: 264px auto;
+}
+
+.main-container {
+  @apply p-6 h-full;
+}
+</style>

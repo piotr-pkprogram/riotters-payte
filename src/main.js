@@ -10,7 +10,7 @@ app.use(router);
 app.use(store);
 
 const BaseButton = defineAsyncComponent(() =>
-  import("./components/atoms/BaseButton.vue")
+  import("@/components/atoms/BaseButton.vue")
 );
 
 const Icon = defineAsyncComponent(() =>
