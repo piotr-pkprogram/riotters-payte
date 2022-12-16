@@ -1,6 +1,6 @@
 <template>
   <div class="icon">
-    <img :src="iconSrc" alt="" />
+    <img :src="require(`../../assets/img/${iconName}`)" alt="" />
     <slot></slot>
   </div>
 </template>
@@ -8,7 +8,7 @@
 <script>
 export default {
   props: {
-    iconSrc: {
+    iconName: {
       type: String,
       required: true,
     },
