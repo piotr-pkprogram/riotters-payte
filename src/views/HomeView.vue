@@ -1,9 +1,5 @@
 <template>
-  <div class="home">
-    <the-icon>
-      <img src="../assets/img/interface-alert-alarm.svg" alt="" />
-    </the-icon>
-  </div>
+  <div class="home"></div>
 </template>
 
 <script>
