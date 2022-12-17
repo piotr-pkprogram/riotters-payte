@@ -1,6 +1,6 @@
 <template>
   <div class="icon">
-    <img :src="require(`../../assets/img/${iconName}`)" alt="" />
+    <img :src="require(`@/assets/img/${iconName}`)" alt="" />
     <slot></slot>
   </div>
 </template>
@@ -18,6 +18,8 @@ export default {
 
 <style lang="scss" scoped>
 .icon {
-  @apply p-4 bg-gray-100 w-max h-max rounded-md cursor-pointer hover:opacity-75 transition-opacity;
+  @apply relative p-4 bg-gray-100 w-max h-max rounded-lg cursor-pointer hover:opacity-75 transition-opacity;
+  height: 48px;
+  width: 48px;
 }
 </style>

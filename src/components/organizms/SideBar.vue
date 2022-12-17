@@ -1,6 +1,6 @@
 <template>
   <aside class="sidebar">
-    <img class="ml-4 mb-16" src="../../assets/img/logo-payte.svg" alt="" />
+    <img class="ml-4 mb-16" src="@/assets/img/logo-payte.svg" alt="" />
     <nav class="mb-12">
       <SideBarElement
         v-for="navEl in navElements"
@@ -13,19 +13,19 @@
     </nav>
     <div class="favorites">
       <span>Favorites</span>
-      <img src="../../assets/img/dots-horizontal.svg" alt="" />
+      <img src="@/assets/img/dots-horizontal.svg" alt="" />
     </div>
     <div class="user-info-block">
       <img
         class="user-img"
-        src="../../assets/img/a-portrait-of-businessman-with-smartphone.png"
+        src="@/assets/img/a-portrait-of-businessman-with-smartphone.png"
         alt="portrait of a smiling businessman with smartphone"
       />
       <span>
         Marc Webbler
         <a href="mailto:marc@riot.com">marc@riot.com</a>
       </span>
-      <img src="../../assets/img/dots-horizontal.svg" alt="" />
+      <img src="@/assets/img/dots-horizontal.svg" alt="" />
     </div>
   </aside>
 </template>

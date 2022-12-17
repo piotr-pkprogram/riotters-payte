@@ -17,7 +17,22 @@ const Icon = defineAsyncComponent(() =>
   import("@/components/atoms/TheIcon.vue")
 );
 
+const InvestBlock = defineAsyncComponent(() =>
+  import("@/components/templates/InvestBlock.vue")
+);
+
+const TabsWrapper = defineAsyncComponent(() =>
+  import("@/components/templates/TabsWrapper.vue")
+);
+
+const TabsOption = defineAsyncComponent(() =>
+  import("@/components/atoms/TabsOption.vue")
+);
+
 app.component("base-button", BaseButton);
 app.component("the-icon", Icon);
+app.component("invest-block", InvestBlock);
+app.component("tabs-wrapper", TabsWrapper);
+app.component("tabs-option", TabsOption);
 
 app.mount("#app");

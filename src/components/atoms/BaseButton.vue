@@ -18,7 +18,7 @@ export default {
 
 <style lang="scss" scoped>
 .btn {
-  @apply md:hover:opacity-80 transition-opacity w-max p-3 text-xl rounded-sm;
+  @apply md:hover:opacity-80 transition-opacity w-max p-3 text-xl rounded-md text-sm;
 }
 
 .main-btn {
