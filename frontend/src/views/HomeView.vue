@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <CurrencyBalance />
-    <invest-block title="Summary"></invest-block>
+    <SummaryChart />
     <tabs-wrapper class="col-start-1 col-end-3">
       <tabs-option title="Summary">
         <SummaryList />
@@ -18,9 +18,10 @@
 import { defineComponent } from "vue";
 import CurrencyBalance from "@/components/organizms/CurrencyBalance.vue";
 import SummaryList from "@/components/organizms/SummaryList.vue";
+import SummaryChart from "@/components/organizms/SummaryChart.vue";
 
 export default defineComponent({
-  components: { SummaryList, CurrencyBalance },
+  components: { SummaryChart, SummaryList, CurrencyBalance },
 });
 </script>
 

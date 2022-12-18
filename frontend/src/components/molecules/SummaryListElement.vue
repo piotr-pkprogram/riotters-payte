@@ -28,7 +28,14 @@
         />
       </div>
     </div>
-    <div class="chart"></div>
+    <div class="chart">
+      <img
+        :src="
+          require(`@/assets/img/${dayChange > 0 ? 'green' : 'red'}-chart.svg`)
+        "
+        alt=""
+      />
+    </div>
     <div class="flex gap-2 items-center justify-self-end">
       <base-button light>Sell</base-button>
       <base-button>Buy</base-button>
