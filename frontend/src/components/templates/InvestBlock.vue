@@ -3,8 +3,8 @@
     <div class="invest-block__header">
       <h2>{{ title }}</h2>
       <img src="@/assets/img/dots-horizontal.svg" alt="" />
-      <slot></slot>
     </div>
+    <slot></slot>
   </div>
 </template>
 

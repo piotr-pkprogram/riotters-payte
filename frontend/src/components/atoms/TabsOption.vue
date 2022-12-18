@@ -1,5 +1,5 @@
 <template>
-  <div class="tab bg-white w-full" v-show="title === selectedTitle">
+  <div class="tab w-full" v-show="title === selectedTitle">
     <slot></slot>
   </div>
 </template>

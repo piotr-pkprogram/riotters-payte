@@ -33,7 +33,8 @@ export default {
 
 <style lang="scss" scoped>
 .tabs {
-  @apply p-8 bg-gray-100 rounded-t-xl;
+  @apply p-8 bg-gray-100 rounded-t-xl overflow-hidden relative;
+  max-height: 400px;
 
   &__header {
     @apply mb-4 list-none flex gap-6 w-full border-b border-gray-300;

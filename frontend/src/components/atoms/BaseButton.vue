@@ -18,14 +18,14 @@ export default {
 
 <style lang="scss" scoped>
 .btn {
-  @apply md:hover:opacity-80 transition-opacity w-max p-3 text-xl rounded-md text-sm;
+  @apply md:hover:opacity-80 transition-opacity w-max p-3 text-xl rounded-md text-sm border-2 border-solid;
 }
 
 .main-btn {
-  @apply btn text-white block h-min bg-main;
+  @apply btn text-white block h-min bg-main border-main;
 }
 
 .light-btn {
-  @apply btn font-semibold block border-2 border-solid text-main border-gray-300 h-min bg-white;
+  @apply btn font-semibold block text-main border-gray-300 h-min bg-white;
 }
 </style>

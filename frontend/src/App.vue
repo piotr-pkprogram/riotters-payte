@@ -38,7 +38,7 @@ export default defineComponent({
   font-family: "Poppins", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  @apply bg-white rounded-3xl w-full h-full grid grid-flow-col h-full relative lg:overflow-hidden;
+  @apply bg-white rounded-3xl w-full h-full grid grid-flow-col h-full relative lg:overflow-x-hidden;
   grid-auto-columns: 264px auto;
   max-width: 1400px;
   max-height: 900px;
