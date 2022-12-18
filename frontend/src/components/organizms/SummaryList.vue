@@ -2,7 +2,7 @@
   <ul class="summary-list">
     <li v-for="currency in currencies" :key="currency.id">
       <SummaryListElement
-        :day-change="currency.quote.USD.volume_change_24h"
+        :day-change="currency.quote.USD.percent_change_24h"
         :price="currency.quote.USD.price"
         :name="currency.name"
         :symbol="currency.symbol"
