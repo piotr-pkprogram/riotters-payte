@@ -46,7 +46,7 @@ export default {
 
 <style lang="scss">
 .sidebar {
-  @apply relative bg-gray-200 px-2 pt-10 h-screen;
+  @apply relative bg-gray-200 px-2 pt-10;
   max-width: 264px;
 }
 

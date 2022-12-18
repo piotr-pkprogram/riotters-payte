@@ -1,5 +1,5 @@
 <template>
-  <div class="tab">
+  <div class="tab bg-white w-full" v-show="title === selectedTitle">
     <slot></slot>
   </div>
 </template>
@@ -23,5 +23,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped></style>

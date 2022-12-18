@@ -1,6 +1,27 @@
 <template>
-  <router-view />
+  <SideBar />
+  <main class="main-container">
+    <nav class="navigation">
+      <SearchInput />
+      <the-icon icon-name="interface-alert-alarm.svg">
+        <span class="red-notify-dot"></span>
+      </the-icon>
+      <the-icon icon-name="interface-setting-menu-hamburger.svg" />
+    </nav>
+    <router-view />
+  </main>
 </template>
+
+<script>
+import { defineComponent } from "vue";
+import SideBar from "@/components/organizms/SideBar.vue";
+import SearchInput from "@/components/atoms/SearchInput.vue";
+import TheIcon from "@/components/atoms/TheIcon.vue";
+
+export default defineComponent({
+  components: { TheIcon, SearchInput, SideBar },
+});
+</script>
 
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Poppins:wght@400;500;600;700&display=swap");
@@ -8,7 +29,8 @@
   font-family: "Poppins", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  @apply bg-white rounded-3xl w-full h-full overflow-x-hidden;
+  @apply bg-white rounded-3xl w-full h-full grid grid-flow-col h-full relative lg:overflow-hidden;
+  grid-auto-columns: 264px auto;
   max-width: 1400px;
   max-height: 900px;
 }
@@ -24,7 +46,7 @@ body {
 }
 
 body {
-  @apply bg-black flex justify-center;
+  @apply bg-black flex justify-center items-center h-screen;
 }
 
 a {
@@ -39,5 +61,18 @@ a {
 
 strong {
   @apply font-semibold;
+}
+
+.main-container {
+  @apply px-16 h-full pt-12;
+}
+
+.red-notify-dot {
+  @apply p-1.5 bg-red-500 absolute -top-1 -right-1 rounded-full border-2 border-white;
+}
+
+.navigation {
+  @apply w-full grid grid-flow-col items-center gap-6 col-start-1 col-end-3 mb-8;
+  grid-auto-columns: auto max-content max-content;
 }
 </style>
