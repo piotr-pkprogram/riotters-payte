@@ -1,5 +1,6 @@
 <template>
   <SideBar />
+  <!--  <BaseMenu ref="baseMenu" />-->
   <main class="main-container">
     <nav class="navigation">
       <SearchInput />
@@ -17,9 +18,17 @@ import { defineComponent } from "vue";
 import SideBar from "@/components/organizms/SideBar.vue";
 import SearchInput from "@/components/atoms/SearchInput.vue";
 import TheIcon from "@/components/atoms/TheIcon.vue";
+// import BaseMenu from "@/components/organizms/BaseMenu.vue";
 
 export default defineComponent({
   components: { TheIcon, SearchInput, SideBar },
+  // setup() {
+  //   const baseMenu = ref(null);
+  //
+  //   return {
+  //     baseMenu,
+  //   };
+  // },
 });
 </script>
 

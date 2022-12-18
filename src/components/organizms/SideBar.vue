@@ -40,7 +40,6 @@ export default {
       navElements: this.$store.getters.getSidebarNavElements,
     };
   },
-  props: {},
 };
 </script>
 
