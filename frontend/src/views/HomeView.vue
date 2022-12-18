@@ -22,6 +22,7 @@
 <style lang="scss">
 .home {
   @apply h-full grid grid-cols-2 gap-8;
+  grid-auto-rows: max-content max-content auto;
 }
 
 .invest-btn-container {
