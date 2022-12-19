@@ -14,15 +14,10 @@
   </div>
 </template>
 
-<script>
-import { defineComponent } from "vue";
+<script setup>
 import CurrencyBalance from "@/components/organizms/CurrencyBalance.vue";
 import SummaryList from "@/components/organizms/SummaryList.vue";
 import SummaryChart from "@/components/organizms/SummaryChart.vue";
-
-export default defineComponent({
-  components: { SummaryChart, SummaryList, CurrencyBalance },
-});
 </script>
 
 <style lang="scss">
