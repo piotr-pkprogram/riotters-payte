@@ -41,7 +41,7 @@ onMounted(async () => {
 }
 
 .curtain {
-  @apply absolute w-full -bottom-4 left-0;
+  @apply hidden absolute w-full -bottom-4 left-0 mds:block;
   height: 136px;
   background: linear-gradient(180deg, rgba(247, 247, 249, 0) 0%, #f7f7f9 100%);
 }

@@ -21,7 +21,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .main-menu {
   @apply fixed right-8 h-full flex p-5 pt-20 bg-gray-200 z-10;
   max-height: 900px;

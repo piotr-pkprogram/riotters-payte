@@ -5,9 +5,12 @@ module.exports = {
   darkMode: "media", // or 'class'
   theme: {
     screens: {
+      xs: "420px",
       sm: "640px",
-      md: "768px",
-      lg: "1024px",
+      mds: "700px",
+      md: "800px",
+      lgs: "945px",
+      lg: "1085px",
       xl: "1280px",
       "2xl": "1536px",
     },
@@ -499,6 +502,7 @@ module.exports = {
       "span-5": "span 5 / span 5",
       "span-6": "span 6 / span 6",
       "span-full": "1 / -1",
+      "3": "3",
     },
     gridRowStart: {
       auto: "auto",

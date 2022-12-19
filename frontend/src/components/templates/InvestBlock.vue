@@ -21,7 +21,7 @@ export default {
 
 <style lang="scss" scoped>
 .invest-block {
-  @apply p-8 bg-gray-100 rounded-xl;
+  @apply p-5 xs:p-8 bg-gray-100 rounded-xl;
 
   &__header {
     @apply grid grid-cols-2;

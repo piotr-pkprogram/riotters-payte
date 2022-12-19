@@ -1,5 +1,5 @@
 <template>
-  <invest-block class="relative" title="Summary">
+  <invest-block class="relative !pb-0" title="Summary">
     <!--<canvas id="summaryChart"></canvas>-->
     <img src="@/assets/img/summary-chart.svg" alt="" class="summary-chart" />
   </invest-block>
@@ -48,6 +48,6 @@
 
 <style lang="scss">
 .summary-chart {
-  @apply w-full mt-6 absolute bottom-4 left-0;
+  @apply w-full mt-6 bottom-4 left-0 lgs:absolute;
 }
 </style>

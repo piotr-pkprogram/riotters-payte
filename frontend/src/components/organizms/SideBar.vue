@@ -1,5 +1,5 @@
 <template>
-  <aside class="sidebar">
+  <aside class="sidebar" ref="sidebar">
     <img class="ml-4 mb-16" src="@/assets/img/logo-payte.svg" alt="" />
     <nav class="mb-12">
       <SideBarElement
@@ -15,6 +15,16 @@
       <span>Favorites</span>
       <img src="@/assets/img/dots-horizontal.svg" alt="" />
     </div>
+    <ul class="grid gap-2 mt-2">
+      <li v-for="currency in currencies" :key="currency.id">
+        <FavoriteElement
+          :day-change="currency.quote.USD.percent_change_24h"
+          :name="currency.name"
+          :symbol="currency.symbol"
+          :image-name="currency.imageName"
+        />
+      </li>
+    </ul>
     <div class="user-info-block">
       <img
         class="user-img"
@@ -27,26 +37,58 @@
       </span>
       <img src="@/assets/img/dots-horizontal.svg" alt="" />
     </div>
+    <the-icon
+      class="close-btn !absolute"
+      iconName="right-arrow.png"
+      @click="closeOpen"
+    />
   </aside>
 </template>
 
-<script>
+<script setup>
+import { computed, onMounted, ref } from "vue";
+import { useStore } from "vuex";
 import SideBarElement from "@/components/atoms/SideBarElement.vue";
+import FavoriteElement from "@/components/molecules/FavoriteElement.vue";
+import axios from "axios";
 
-export default {
-  components: { SideBarElement },
-  data() {
-    return {
-      navElements: this.$store.getters.getSidebarNavElements,
-    };
-  },
+const store = useStore();
+const navElements = computed(() => store.getters.getSidebarNavElements);
+
+const currencies = ref([]);
+const sidebar = ref(null);
+let isOpen = false;
+
+const closeOpen = () => {
+  if (isOpen) {
+    sidebar.value.classList.add("!translate-x-0");
+    isOpen = false;
+  } else {
+    sidebar.value.classList.remove("!translate-x-0");
+    isOpen = true;
+  }
 };
+
+onMounted(async () => {
+  const response = await axios.get("http://localhost:5000/api/crypto/");
+
+  const currenciesSymbols = ["BTC", "ADA"];
+  currencies.value = response.data.filter((currency) => {
+    if (currenciesSymbols.includes(currency.symbol)) {
+      currency.imageName = `${currency.name.toLowerCase()}-icon.svg`;
+      return true;
+    } else {
+      return false;
+    }
+  });
+});
 </script>
 
 <style lang="scss">
 .sidebar {
-  @apply relative bg-gray-200 px-2 pt-10;
-  max-width: 264px;
+  @apply fixed left-0 bottom-0 h-full bg-gray-200 px-2 pt-10 z-10 -translate-x-full mds:h-auto mds:relative mds:translate-x-0;
+  transition: transform 300ms ease;
+  width: 264px;
 }
 
 .favorites {
@@ -77,6 +119,18 @@ export default {
     @apply bg-white rounded-full border-green-400 border;
     height: 40px;
     width: 40px;
+  }
+}
+
+.close-btn {
+  @apply -right-9 top-16 border-black border-2 mds:hidden;
+  transition-property: transform !important;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+  transition-duration: 150ms !important;
+
+  &:hover {
+    @apply scale-110;
+    opacity: 1 !important;
   }
 }
 </style>

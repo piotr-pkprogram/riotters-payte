@@ -1,8 +1,8 @@
 <template>
   <div class="home">
     <CurrencyBalance />
-    <SummaryChart />
-    <tabs-wrapper class="col-start-1 col-end-3">
+    <SummaryChart class="summary-block" />
+    <tabs-wrapper class="lgs:col-start-1 lgs:col-end-3">
       <tabs-option title="Summary">
         <SummaryList />
       </tabs-option>
@@ -27,7 +27,14 @@ export default defineComponent({
 
 <style lang="scss">
 .home {
-  @apply h-full grid grid-cols-2 gap-8;
-  grid-auto-rows: max-content max-content auto;
+  @apply grid gap-5 lgs:grid-cols-2 lg:gap-8;
+
+  @media (min-width: 945px) {
+    grid-auto-rows: max-content max-content auto;
+  }
+}
+
+.summary-block {
+  @apply row-3 mb-5 lgs:row-auto mds:mb-0;
 }
 </style>

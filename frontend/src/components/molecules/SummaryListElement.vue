@@ -2,16 +2,16 @@
   <div class="summary-list-element">
     <div class="flex gap-3 justify-self-start">
       <img :src="require(`@/assets/img/${imageName}`)" :alt="name + ' icon'" />
-      <p class="container">
+      <p class="text-container">
         <span class="text-gray-400">{{ symbol }}</span>
         <span class="font-semibold">{{ name }}</span>
       </p>
     </div>
-    <p class="container">
+    <p class="text-container">
       <span class="text-gray-400">Price</span>
       <span class="font-semibold">${{ Math.round(price * 100) / 100 }}</span>
     </p>
-    <div class="container">
+    <div class="text-container">
       <span class="text-gray-400">Change</span>
       <div class="flex gap-1">
         <p v-if="dayChange > 0" class="font-semibold text-green-500">
@@ -72,7 +72,7 @@ export default {
 
 <style lang="scss">
 .summary-list-element {
-  @apply grid grid-flow-col p-4 bg-white justify-items-center items-center;
+  @apply flex flex-wrap lgs:grid lgs:grid-flow-col p-4 bg-white gap-x-10 gap-y-4 lgs:gap-0 lgs:justify-items-center items-center;
 }
 
 .brand-container {
@@ -83,7 +83,7 @@ export default {
   }
 }
 
-.container {
+.text-container {
   @apply grid items-center text-sm;
 }
 </style>

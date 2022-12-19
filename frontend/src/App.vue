@@ -38,10 +38,13 @@ export default defineComponent({
   font-family: "Poppins", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  @apply bg-white rounded-3xl w-full h-full grid grid-flow-col h-full relative lg:overflow-x-hidden;
-  grid-auto-columns: 264px auto;
+  @apply bg-white rounded-3xl w-full h-full grid grid-flow-col h-full relative overflow-x-hidden;
   max-width: 1400px;
   max-height: 900px;
+
+  @media (min-width: 700px) {
+    grid-auto-columns: 264px auto;
+  }
 }
 
 html,
@@ -73,7 +76,7 @@ strong {
 }
 
 .main-container {
-  @apply px-16 h-full pt-12;
+  @apply h-full pt-12 pb-0 p-2 xs:p-5 lg:px-16;
 }
 
 .red-notify-dot {
@@ -81,7 +84,7 @@ strong {
 }
 
 .navigation {
-  @apply w-full grid grid-flow-col items-center gap-6 col-start-1 col-end-3 mb-8;
+  @apply w-full flex flex-wrap xs:grid xs:grid-flow-col items-center gap-6 col-start-1 col-end-3 mb-8;
   grid-auto-columns: auto max-content max-content;
 }
 </style>
