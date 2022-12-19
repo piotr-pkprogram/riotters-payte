@@ -34,6 +34,7 @@ watchEffect(() => {
             pointBackgroundColor: "#F7F7F9",
             pointBorderWidth: 1,
             pointHoverRadius: 5,
+            pointHoverBorderWidth: 2,
             pointHoverBackgroundColor: "#fff",
             pointHoverBorderColor: "#7445FB",
           },
