@@ -1,23 +1,38 @@
 # riotters-payte
 
-## Project setup
+## Project Backend setup
 ```
-npm install
+$ cd backend
+
+$ npm install
 ```
 
-### Compiles and hot-reloads for development
+### Compiles Backend and hot-reloads for development
 ```
-npm run serve
+$ cd backend
+
+$ npm start
 ```
 
-### Compiles and minifies for production
+## Project Frontend setup
 ```
-npm run build
+$ cd frontend
+
+$ npm install
 ```
 
-### Lints and fixes files
+### Compiles Frontend and hot-reloads for development
 ```
-npm run lint
+$ cd frontend
+
+$ npm run serve
+```
+
+### Compiles Frontend and minifies for production
+```
+$ cd frontend
+
+$ npm run build
 ```
 
 ### Customize configuration
