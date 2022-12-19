@@ -1,35 +1,41 @@
 <template>
   <SideBar />
-  <!--  <BaseMenu ref="baseMenu" />-->
+  <BaseMenu @closeMenu="closeOpenMenu" />
   <main class="main-container">
     <nav class="navigation">
       <SearchInput />
       <the-icon icon-name="interface-alert-alarm.svg">
         <span class="red-notify-dot"></span>
       </the-icon>
-      <the-icon icon-name="interface-setting-menu-hamburger.svg" />
+      <the-icon
+        icon-name="interface-setting-menu-hamburger.svg"
+        @click="closeOpenMenu"
+      />
     </nav>
     <router-view />
   </main>
 </template>
 
-<script>
-import { defineComponent } from "vue";
+<script setup>
 import SideBar from "@/components/organizms/SideBar.vue";
 import SearchInput from "@/components/atoms/SearchInput.vue";
 import TheIcon from "@/components/atoms/TheIcon.vue";
-// import BaseMenu from "@/components/organizms/BaseMenu.vue";
+import BaseMenu from "@/components/organizms/BaseMenu.vue";
 
-export default defineComponent({
-  components: { TheIcon, SearchInput, SideBar },
-  // setup() {
-  //   const baseMenu = ref(null);
-  //
-  //   return {
-  //     baseMenu,
-  //   };
-  // },
-});
+const closeOpenMenu = () => {
+  const baseMenu = document.querySelector(".main-menu");
+
+  if (
+    baseMenu.classList.contains("translate-x-full") &&
+    baseMenu.classList.contains("opacity-0")
+  ) {
+    baseMenu.classList.remove("translate-x-full");
+    baseMenu.classList.remove("opacity-0");
+  } else {
+    baseMenu.classList.add("translate-x-full");
+    baseMenu.classList.add("opacity-0");
+  }
+};
 </script>
 
 <style lang="scss">
