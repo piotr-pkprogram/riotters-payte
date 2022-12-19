@@ -12,27 +12,27 @@ const summaryChart = ref(null);
 
 watchEffect(() => {
   if (summaryChart.value) {
-    const ctx = summaryChart.value;
-    // const gradient = ctx.createLinearGradient(116, 69, 251, 40);
-    // gradient.addColorStop(0, "rgba(250,174,50,1)");
-    // gradient.addColorStop(1, "rgba(250,174,50,0)");
+    const ctx = summaryChart.value.getContext("2d");
+    const gradient = ctx.createLinearGradient(0, 0, 0, 424);
+    gradient.addColorStop(0, "rgba(116, 69, 251, 0.16)");
+    gradient.addColorStop(0.5, "rgba(116, 69, 251, 0)");
 
     new Chart(ctx, {
       type: "line",
       data: {
-        labels: ["", "", "", "", "", ""],
+        labels: ["", "", "", "17 May", "", ""],
         datasets: [
           {
             label: "This month",
-            data: [12, 19, 3, 5, 2, 3],
+            data: [0, 14, 12, 21, 16, 26],
             borderWidth: 2,
             borderColor: "#7445FB",
             fill: true,
-            backgroundColor: "rgba(116, 69, 251, 0.4)",
-            tension: 1,
+            backgroundColor: gradient,
+            tension: 0.4,
             borderJoinStyle: "miter",
-            pointBackgroundColor: "#F7F7F9",
-            pointBorderWidth: 1,
+            pointBackgroundColor: "#7445FB",
+            pointBorderWidth: 0,
             pointHoverRadius: 5,
             pointHoverBorderWidth: 2,
             pointHoverBackgroundColor: "#fff",
@@ -40,22 +40,39 @@ watchEffect(() => {
           },
           {
             label: "Last month",
-            data: [6, 12, 8, 2, 9, 3],
+            data: [0, 17, 13, 12.5, 5, 8],
             borderDash: [6, 3],
             borderDashOffset: 4,
             borderWidth: 2,
             borderColor: "#858585",
-            pointStyle: false,
-            tension: 1,
+            tension: 0.4,
+            pointBackgroundColor: "#858585",
+            pointBorderWidth: 0,
+            pointHoverRadius: 5,
+            pointHoverBorderWidth: 2,
+            pointHoverBackgroundColor: "#fff",
+            pointHoverBorderColor: "#858585",
           },
         ],
       },
       options: {
         responsive: true,
         plugins: {
+          tooltip: {
+            xAlign: "center",
+            yAlign: "bottom",
+            bodyAlign: "center",
+            titleAlign: "center",
+            backgroundColor: "#0A041C",
+            displayColors: false,
+          },
           legend: {
+            position: "bottom",
+            align: "start",
             labels: {
-              // This more specific font property overrides the global property
+              usePointStyle: true,
+              pointStyle: "circle",
+              boxWidth: 8,
               font: {
                 size: 12,
                 family: "'Poppins', Arial, sans-serif",
@@ -70,20 +87,20 @@ watchEffect(() => {
             },
             drawTicks: false,
             grid: {
-              borderDash: [8, 4],
-              color: "#F7F7F9",
+              display: false,
+              drawBorder: false,
+              drawOnChartArea: false,
             },
           },
           y: {
             beginAtZero: true,
-            border: {
-              display: false,
-            },
             grid: {
               color: "#858585",
+              drawBorder: false,
+              tickColor: "#F7F7F9",
+              borderDash: [2, 8],
+              borderDashOffset: 4,
             },
-            tickBorderDash: [6, 3],
-            tickBorderDashOffset: 4,
           },
         },
       },
